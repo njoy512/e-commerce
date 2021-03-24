@@ -1,0 +1,25 @@
+<form>
+  <div class="position-relative">
+    <mat-select #mySelect [(value)]="selected" (openedChange)="clearSearch()" (selectionChange)="change()" class="custom-filter"
+      [disableOptionCentering]="true" panelClass="filterPanelClass">
+      <div class="drop-down-body">
+        <div class="px-3 pt-3">
+          <div class="search-box">
+            <div class="py-1 px-2">
+              <img class="" src="assets/images/search.svg" alt="">
+            </div>
+            <input type="text" placeholder="Search" aria-label="Number" [formControl]="myControl">
+          </div>
+          <hr>
+        </div>
+        <mat-option class="options-text" *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </div>
+    </mat-select>
+    <img height="6" class="dropdown-icon" src="assets/images/dropdown.svg" alt="">
+    <div *ngIf="hasLabel" (click)="mySelect.toggle()" class="filter-label">
+      {{label}}: {{selected?.name}}
+    </div>
+  </div>
+</form>

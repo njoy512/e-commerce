@@ -1,0 +1,57 @@
+// <<--------- Important note --------->>
+// Add --icon-color, --icon-bg for nav-icon.svgs
+// refer existing .svg files in 'assets/nav_icons'
+
+.custom-nav-link {
+  color: #58557E;
+  font-weight: 600;
+  font-size: var(--size-small);
+  text-align: left;
+  display: flex !important;
+  align-items: center;
+}
+
+.custom-nav-link mat-icon {
+  --icon-color: var(--secondary) !important;
+  // --icon-bg: white !important;
+}
+
+.router-link-active {
+  font-weight: bold;
+  color: var(--secondary);
+  background: #EAF1FF;
+  border-radius: 6px;
+  position: relative;
+}
+
+.router-link-active .nav-icon-container {
+  background-color: var(--secondary);
+  border-radius: 100%;
+}
+
+.router-link-active mat-icon {
+  --icon-color: white !important;
+  // --icon-bg: var(--secondary) !important;
+}
+
+.router-link-active::before {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  display: block;
+  height: 60%;
+  content: ' ';
+  border-radius: 6px;
+  width: 3.5px;
+  background-color: var(--primary);
+}
+
+.mat-icon {
+  transform: scale(0.65);
+}
+
+.nav-category {
+  font-weight: 600;
+  font-size: 9px;
+  color: #8F8F8F;
+}

@@ -1,0 +1,129 @@
+.custom-filter {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 40px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+}
+
+::ng-deep .custom-filter .mat-select-trigger {
+  height: 100% !important;
+}
+
+::ng-deep .custom-filter .mat-select-value {
+  vertical-align: middle !important;
+  padding-left: 19.5px;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  color: var(--black-3) !important;
+}
+
+::ng-deep .custom-filter .mat-select-arrow {
+  opacity: 0 !important;
+}
+
+.drop-down-body {
+  margin-top: 12px !important;
+  position: relative;
+  //   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16) !important;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid #C4C4C4 !important;
+  border-radius: 6px;
+  background-color: white !important;
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &:after {
+    left: calc(80% + 2px);
+    border-color: transparent transparent #fff transparent;
+    border-width: 10px;
+  }
+
+  &:before {
+    left: calc(80%);
+    border-color: transparent transparent #ccc transparent;
+    border-width: 12px;
+  }
+}
+
+::ng-deep .filterPanelClass {
+  margin-top: 5px !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.search-box {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 4.75px;
+  display: flex;
+  height: 40px;
+}
+
+.search-box input {
+  width: calc(100% - 30px);
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}
+
+::placeholder {
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}
+
+.options-text {
+  font-weight: 600;
+  font-size: 12px;
+  color: #100C47;
+}
+
+.filter-label {
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  color: var(--black-3) !important;
+  position: absolute;
+  height: 34px;
+  top: 3px;
+  right: 30px;
+  left: 19px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
