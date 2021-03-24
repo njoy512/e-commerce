@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ResponsiveLayoutComponent } from './responsive-layout/responsive-layout.component';
 import { FilterBoxComponent } from './filter-box/filter-box.component';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,9 +31,9 @@ import { FilterBoxComponent } from './filter-box/filter-box.component';
   imports: [
     CommonModule,
     RouterModule,
-    MatSidenavModule,
-    MatDialogModule,
-    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports: [
     ProductCardComponent,
