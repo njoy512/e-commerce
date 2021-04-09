@@ -14,6 +14,7 @@ export class FilterBoxComponent implements OnInit {
   @Input() options: any = [];
   @Input() defaultOptionId: any = '';
   @Input() label: string = '';
+  @Input() hideSearch: boolean = false;
   @Output() selectEvent = new EventEmitter<any>();
 
   myControl = new FormControl();

@@ -1,13 +1,41 @@
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center header-width">
   <div class="d-flex align-items-center justify-content-end">
     <img src="assets/images/brand.svg" alt="">
   </div>
-  <div class="d-flex align-items-center justify-content-end">
-    <div>
 
+  <!-- nav -->
+  <div class="d-none d-lg-flex justify-content-lg-around align-items-lg-center pl-10rem">
+    <div class="nav-item">
+      <a> Shop </a>
     </div>
-    <div>
+    <div class="nav-item">
+      <a> About us </a>
+    </div>
+    <div class="nav-item">
+      <a> Our Stores </a>
+    </div>
+    <div class="nav-item">
+      <a> Contact Us </a>
+    </div>
+  </div>
+  <!-- /nav -->
 
+
+  <div class="d-flex align-items-center justify-content-end">
+    <div class="d-flex align-items-center px-2">
+      <div class="nav-item pr-2">
+        <a> Search </a>
+      </div>
+      <img height="30" src="assets/images/search.svg" alt="">
+    </div>
+    <div class="px-2">
+      <img height="30" src="assets/images/user.svg" alt="">
+    </div>
+    <div class="px-2 position-relative cursor-pointer" (click)="gotoCart()">
+      <img height="30" src="assets/images/cart.svg" alt="">
+      <span *ngIf="cartItems.length > 0" class="badge cart-count">
+        <span> {{cartItems.length}}</span>
+      </span>
     </div>
   </div>
 </div>

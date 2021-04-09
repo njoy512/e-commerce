@@ -1,0 +1,37 @@
+.modal-header {
+  font-size: 18px;
+  font-weight: 600;
+  background: #F8F8F8;
+  border-radius: 10px 10px 0px 0px;
+  margin: -24px -24px 0 -24px;
+  border: none;
+  padding: 20px 35px;
+  // display: flex;
+  // justify-content: space-between;
+  position: relative;
+}
+
+.modal-footer {
+  background: #F8F8F8;
+  box-shadow: 0px -3px 18px rgba(0, 0, 0, 0.18);
+  border-radius: 0px 0px 10px 10px;
+  margin: 0 -24px -24px -24px;
+  border: none;
+  padding: 20px 35px;
+  justify-content: start;
+}
+
+.modal-body {
+  max-height: calc(90vh - 152px);
+  overflow-y: auto;
+}
+
+.item-box {
+  border: 1px solid #cdcdcd;
+  padding: 1rem;
+  margin: 5px auto;
+}
+
+a {
+  text-decoration: none !important;
+}

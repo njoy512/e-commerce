@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <div class="">
+    Cart
+  </div>
+  <div>
+    <img height="23" (click)="onNoClick()" src="assets/images/close-btn.svg" alt="">
+  </div>
+</div>
+
+<div class="modal-body">
+  <div *ngIf="cartList.length == 0">
+    <div class="my-4 font-16px font-wt-500 text-grey">
+      No items added
+    </div>
+  </div>
+
+  <div *ngIf="cartList.length != 0">
+    <div *ngFor="let item of cartList" class="item-box ">
+      <div class="font-16px font-wt-300 text-grey my-1">
+        {{item.name}} (size: {{item.size.value}})
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="font-14px font-wt-700 text-black"> ${{item.price}} </span>
+        <a (click)="removeProduct(item)" class="font-12px font-wt-500 text-danger cursor-pointer">
+          Remove
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <div class="d-flex flex-column-reverse flex-lg-row align-items-center justify-content-between w-100">
+    <div class="d-flex align-items-center">
+      <button class="btn btn-primary btn-lg">
+        Make payment
+      </button>
+      <!-- <a class="ml-3 h-4 cursor-pointer">
+        Cancel
+      </a> -->
+    </div>
+    <div>
+      <div class="border-left pb-2 py-lg-1 px-lg-2">
+        <span class="font-wt-700 text-grey">
+          Total amount: &nbsp;
+        </span>
+        <span class="font-wt-700 text-grey">
+          ₹ {{totalPaymentAmt}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

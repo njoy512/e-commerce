@@ -1,0 +1,28 @@
+.top-banner {
+  background: linear-gradient(90.06deg, #181716 0%, #ED4E08 99.97%);
+  height: 53px;
+}
+
+.custom-round-border-grey {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 72px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #878787;
+  padding: 15px 21px;
+}
+
+.custom-round-border-black {
+  border: 1px solid #000000 !important;
+  box-sizing: border-box;
+  border-radius: 42px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #000000 !important;
+  padding: 15px 21px;
+}

@@ -1,0 +1,37 @@
+.product-img {
+  width: 260px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.product-box {
+  width: 260px;
+  //   height: 475px;
+  position: relative;
+}
+
+.p-15px {
+  padding: 15px;
+}
+
+.on-hover-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto -1px;
+  z-index: 10;
+}
+
+.size-selector-item {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.details-box {
+  margin: auto -1px;
+}

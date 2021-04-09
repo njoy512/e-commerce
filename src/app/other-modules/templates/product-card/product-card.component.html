@@ -1,1 +1,92 @@
-<p>product-card works!</p>
+<div class="m-2 product-box" (mouseover)="isHover=true" (mouseout)="isHover=false">
+  <!-- img -->
+  <div>
+    <img class="product-img" [src]="productDetails?.image_src[0]" alt="">
+  </div>
+  <!-- /img -->
+
+  <!-- details -->
+  <div class="p-15px details-box">
+    <div class="font-16px font-wt-700 text-black">
+      {{productDetails?.vendor}}
+    </div>
+    <div class="font-16px font-wt-300 text-grey my-1">
+      {{productDetails?.name}}
+    </div>
+    <div>
+      <span class="font-14px font-wt-700 text-black">
+        ${{productDetails?.price}}
+      </span>
+      <span class="font-12px font-wt-300 text-grey">
+        <s> ${{productDetails?.compare_at_price}} </s>
+      </span>
+      <span class="font-12px font-wt-300 text-danger">
+        ({{((productDetails?.compare_at_price-productDetails?.price)/productDetails?.compare_at_price)* 100 | number}}%
+        OFF)
+      </span>
+    </div>
+  </div>
+  <!-- details -->
+
+  <!-- on hover -->
+  <div [hidden]="!isAddToCart" class="p-15px pt-0 bg-white on-hover-panel">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="mx-1 mb-1" *ngFor="let item of [1,2,3]">
+        <img *ngIf="item != 2" height="4" src="assets/images/circle-grey.svg" alt="">
+        <img *ngIf="item == 2" height="4" src="assets/images/circle-red.svg" alt="">
+      </div>
+    </div>
+    <div>
+      <button (click)="addToCart()" class="btn btn-custom-outline w-100">
+        ADD TO CART
+      </button>
+    </div>
+    <div class="font-16px font-wt-300 text-grey my-1">
+      Sizes: XS, S, M, L, XL, XXL
+    </div>
+    <div>
+      <span class="font-14px font-wt-700 text-black">
+        ${{productDetails?.price}}
+      </span>
+      <span class="font-12px font-wt-300 text-grey">
+        <s> ${{productDetails?.compare_at_price}} </s>
+      </span>
+      <span class="font-12px font-wt-300 text-danger">
+        ({{((productDetails?.compare_at_price-productDetails?.price)/productDetails?.compare_at_price)* 100 | number}}%
+        OFF)
+      </span>
+    </div>
+  </div>
+  <!-- /on hover -->
+
+  <!-- add to cart -->
+  <div [hidden]="!(isHover && !isAddToCart)" class="p-15px pt-0 bg-white on-hover-panel">
+    <div class="font-12px font-wt-500 text-black my-2">
+      Select Size
+    </div>
+
+    <div class="d-flex align-items-center justify-content-start mb-2">
+      <div *ngFor="let item of [38,39,40,44,46]; let i =index" (click)="selectedSize(i)"
+        class="size-selector-item mr-2 cursor-pointer">
+        {{item}}
+      </div>
+    </div>
+
+    <div class="font-16px font-wt-300 text-grey my-1">
+      Sizes: XS, S, M, L, XL, XXL
+    </div>
+    <div>
+      <span class="font-14px font-wt-700 text-black">
+        ${{productDetails?.price}}
+      </span>
+      <span class="font-12px font-wt-300 text-grey">
+        <s> ${{productDetails?.compare_at_price}} </s>
+      </span>
+      <span class="font-12px font-wt-300 text-danger">
+        ({{((productDetails?.compare_at_price-productDetails?.price)/productDetails?.compare_at_price)* 100 | number}}%
+        OFF)
+      </span>
+    </div>
+  </div>
+  <!-- /add to cart -->
+</div>

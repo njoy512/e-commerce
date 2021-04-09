@@ -1,0 +1,54 @@
+<!-- banner -->
+<div class="top-banner d-flex align-items-center justify-content-center">
+  <div class="font-16px font-wt-500 text-white text-center">
+    Invite friends to Big Fashion Festival & get up to $150 MynCash for every person who visits
+  </div>
+</div>
+<!-- /banner -->
+
+<!-- breadcrumb -->
+<p class="font-13px text-black font-wt-300 p-3 mb-0">
+  Home / Clothing / Mens Clothing / <span class="font-wt-400"> All Mens Clothing </span>
+</p>
+<!-- /breadcrumb -->
+
+<!-- list title -->
+<p class="font-21px text-black font-wt-700 px-3">
+  {{selectedFilter | titlecase}} <span class="font-wt-300 text-grey"> ({{filteredData.length}} Products) </span>
+</p>
+<!-- /list title -->
+
+<!-- filters -->
+<div class="px-3 row justify-content-lg-between align-items-lg-center mx-0">
+  <div class="d-flex col-12 col-lg-10 px-0 flex-wrap justify-content-between justify-content-lg-start">
+    <div class="d-flex align-items-center">
+      <p class="mb-0 font-16px text-black font-wt-700 mr-3">
+        FILTERS:
+      </p>
+    </div>
+    <div *ngFor="let item of filterOptions" class="custom-round-border-grey mr-2 cursor-pointer mb-2 mb-lg-0"
+      [ngClass]="{'custom-round-border-black': item == selectedFilter}" (click)="tagFilter(item)">
+      {{item | titlecase}}
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-2 px-0">
+    <app-filter-box (selectEvent)="selectSort($event)" [defaultOptionId]="1" [options]="sortOptions" [label]="'Sort By'"
+      [hideSearch]="true">
+    </app-filter-box>
+  </div>
+</div>
+
+<div class="px-3">
+  <hr>
+</div>
+<!-- /filters -->
+
+<!-- product cards -->
+<div class="p-2 d-flex flex-wrap justify-content-around justify-content-lg-between"
+  [ngClass]="{'justify-content-lg-between': filteredData.length >= 4, 'justify-content-lg-start' : filteredData.length < 4 }">
+  <div *ngFor="let item of filteredData">
+    <app-product-card [productDetails]="item" (selected)="itemAdded($event)"></app-product-card>
+  </div>
+</div>
+<!-- /product cards -->

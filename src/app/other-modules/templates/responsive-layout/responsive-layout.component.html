@@ -7,8 +7,10 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="resp-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <!-- <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" [opened]="!isSmallScreen" [disableClose]="!isSmallScreen"> -->
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56" [opened]="!isSmallScreen" [disableClose]="!isSmallScreen">
+      fixedTopGap="56" [opened]="false" [disableClose]="!isSmallScreen">
       <mat-nav-list>
         <ng-content select="[content-sidenav]"></ng-content>
       </mat-nav-list>

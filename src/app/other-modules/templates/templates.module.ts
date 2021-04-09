@@ -14,6 +14,7 @@ import { ResponsiveLayoutComponent } from './responsive-layout/responsive-layout
 import { FilterBoxComponent } from './filter-box/filter-box.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalsModule } from '../modals/modals.module';
 
 
 
@@ -33,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ModalsModule
   ],
   exports: [
     ProductCardComponent,
